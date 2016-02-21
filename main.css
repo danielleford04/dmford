@@ -1,0 +1,155 @@
+/* ----------- Body ----------- */
+
+body {
+	background-color: #FEFEFA;
+	font-family: 'PT Sans', sans-serif;
+	text-align: center;
+}
+
+body h2 {
+	text-transform: uppercase;
+	letter-spacing: 30px;
+	font-size: 40px;
+	font-weight: 300;
+}
+
+/* ------------ Nav -------------- */
+
+.nav {
+	background-color: #111212;
+	height: 50px;
+	color: #CCA9FF;
+	position: fixed;
+	width: 98%;
+	margin-top: 0;
+	z-index: 1;
+}
+
+.nav p {
+	text-align: left;
+	font-family: 'Pacifico', cursive;
+	position: absolute;
+	top: -28px;
+	left: 50px;
+	font-size: 28px;
+	color: #CCA9FF;
+}
+
+.nav ul {
+	position: fixed;
+	right: 0;
+	z-index: 5;
+}
+
+.nav ul li {
+	display: inline;
+	padding: 0 30px 0 30px;
+	margin-top: 15px;
+
+	}
+
+.nav ul li a {
+	text-decoration: none;
+	color: #FEFEFA;
+
+}
+
+/* --------------Header --------------- */
+.header {
+	background-color: #111212;
+	color: #CCA9FF;
+	font-size: 30vw;
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+	padding: 1px;
+	height: 2em;
+	vertical-align: center;
+}
+
+.header p {
+	margin: 5px;
+	position: relative;
+	top: 50px;
+	z-index: 2;
+}
+
+/* ------------- Bio ------------- */
+
+.bio img {
+	float: left;
+	width: 50%;
+}
+
+.bio {
+	height: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+	padding-top: 40px;
+}
+
+.bio p {
+	position: absolute;
+	top: 40%;
+	right: 0;
+	font-weight: bold;
+	font-size: 24px;
+	width: 45%;
+
+}
+
+
+/* -----------Skills----------*/
+
+.skills {
+	padding-top: 40px;
+}
+
+.skills img {
+	border-radius: 5px;
+	border: 2px #111212 solid;
+	margin: 5px;
+	height: 20vh;
+}
+
+/*--------------Portfolio------*/
+.portfolio{
+	height: 90%;
+	padding-top: 40px;
+	}
+
+.dharma {
+	width: 75%;
+	margin: auto;
+}
+
+/* --------------Contact---------*/
+
+.contact {
+	padding-top: 40px;
+	height: 90%;
+
+}
+
+/* ------------Footer ---------*/
+
+.footer {
+	height: 30px;
+	background-color: #111212;
+	color: #FEFEFA;
+	padding: 15px;
+}
+
+.ftleft {
+	float: left;
+}
+
+.ftright {
+	float: right;
+}
+
+/* 
+portfolio - meditation app, new shit obv
+nav - make links work
+mobile ready?
+*/
