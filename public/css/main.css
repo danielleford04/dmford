@@ -75,10 +75,10 @@ body h2 {
 
 /* ------------- Bio ------------- */
 
-.bio img {
+/*.bio img {
 	float: left;
 	width: 50%;
-}
+}*/
 
 .bio {
 	height: 90%;
@@ -88,7 +88,15 @@ body h2 {
 	padding-top: 40px;
 }
 
-.bio p {
+/*.imgfull {
+	display: block;
+}*/
+
+.imgmobile {
+	display: none;
+}
+
+/*.bio p {
 	position: absolute;
 	top: 40%;
 	right: 0;
@@ -96,7 +104,7 @@ body h2 {
 	font-size: 24px;
 	width: 45%;
 
-}
+}*/
 
 
 /* -----------Skills----------*/
@@ -148,8 +156,96 @@ body h2 {
 	float: right;
 }
 
-/* 
-portfolio - meditation app, new shit obv
-nav - make links work
-mobile ready?
-*/
+/* -----------Mobile Ready -------*/
+
+@media screen and (max-width: 600px) {
+	/*------header------*/
+.nav ul li {
+	display: block;
+	}
+.nav ul {
+	padding-top: 15px;
+	text-align: center;
+	margin: auto;
+	position: static;
+}
+.nav {
+	position: static;
+	width: 100%;
+}
+.nav p {
+	padding-top: 10px;
+}
+.header p {
+	top: 120px;
+	}
+.header {
+		height: 3em;
+	}
+
+	/*------bio------*/
+.bio {
+	height: 100%;
+}
+
+.bio img {
+	height: 60%;
+}
+
+.bio p {
+	font-size: 18px;
+}
+
+.imgfull {
+	display: none;
+
+}
+
+.imgmobile {
+	display: inline;
+}
+
+/* ------- Portfolio -------*/
+
+.portfolio iframe {
+	width: 90%;
+}
+	/*-----skills-----*/
+	.skills img {
+		width: 20vw;
+		height: auto;
+	}
+
+	/*----contact----*/
+	.contact p {
+		font-size: 24px;
+
+	}
+
+	.mobileno {
+		display: none;
+	}
+
+
+	body h2 {
+		letter-spacing: 10px;
+	}
+}
+
+@media screen and (min-width: 600px){
+.bio img {
+	float: left;
+	width: 50%;
+}
+
+.bio p {
+	position: absolute;
+	top: 40%;
+	right: 0;
+	font-weight: bold;
+	font-size: 24px;
+	width: 45%;
+
+}
+}
+
