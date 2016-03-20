@@ -1,0 +1,143 @@
+/* ---------------- Body ------------------ */
+body {
+	margin: 0;
+			/*------ Gradient -------*/
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#45484d+0,000000+100;Black+3D+%231 */
+				background: #45484d; /* Old browsers */
+				background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
+				background: linear-gradient(to bottom,  #45484d 0%,#000000 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+.container {
+	width: 550px;
+	margin: auto;
+	padding: 50px;
+	position: relative;
+	font-weight: 200;
+}
+
+.bodyDiv {
+	background-color: #252120;
+	width: 500px;
+	padding: 20px;
+	margin: 20px 0 20px 0;
+	border: 2px solid #8b8989;
+	border-radius: 5px;
+	padding-top: 10px;
+	color: #DCDCDC;
+	font-family: sans-serif;
+}
+
+h1 {
+	color: #E5dfc5;
+	font-family: sans-serif;
+	text-align: center;
+	font-weight: 100;
+	letter-spacing: 7px;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-family: 'Roboto', sans-serif;
+
+}
+
+/* --------- Log Form ---------- */
+
+input[type="text"]
+{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	color: #DCDCDC;
+    background-color: #3B3B3B;
+	border: solid 1px gray;
+	box-shadow: inset 1px 1px 2px 0 #707070;
+	transition: box-shadow 0.3s;
+}
+
+textarea {
+    color: #DCDCDC;
+    background-color: #3B3B3B;
+	border: solid 1px gray;
+	box-shadow: inset 1px 1px 2px 0 #707070;
+	transition: box-shadow 0.3s;
+	width: 318px;
+}
+
+.dd {
+	font-weight: 100;
+}
+
+.addForm {
+	background-color: #252120;
+	font-size: 12px;
+	border: 1px solid #8b8989;
+	border-radius: 5px;
+	padding: 10px;
+	width: 330px;
+	margin-left: 140px;
+}
+
+.button {
+	color: #DCDCDC;
+    background-color: #3B3B3B;
+    border: solid 1px gray;
+    border-radius: 3px;
+	box-shadow: inset 1px 1px 2px 0 #707070;
+	transition: box-shadow 0.3s;
+}
+
+.addMoreButton {
+	margin: 0 0 0 260px;
+}
+
+/* -----------------Plan ------------*/
+
+.boldEntry {
+	font-weight: 600;
+	color: #87CEEB;
+
+}
+
+.plan {
+	font-weight: 200;
+}
+
+.plan input[type="text"] {
+	width: 40px;
+}
+
+/* -------------- Archive ----------*/
+.archive img {
+	margin-left: 50px;
+}
+
+.archive {
+	font-weight: 
+}
+
+/*-------------- Timer -------------*/
+
+.timer {
+	text-align: center;
+}
+
+.timer h3 {
+	margin-bottom: 0;
+}
+
+/* -------------Calendar -----------*/
+
+.calendarOutput {
+	border: 2px solid #8b8989;
+	border-radius: 5px;
+	text-align: center;
+	padding: 10px;
+	margin-top: 20px;
+
+}

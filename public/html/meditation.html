@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html ng-App="myApp">
+<head>
+	<title></title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="../css/meditation.css">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,700' rel='stylesheet' type='text/css'>
+
+		<link href='../css/fullcalendar.css' rel='stylesheet' />
+		<script src='../js/moment.min.js'></script>
+		<script src='../js/jquery.min.js'></script>
+<!-- 		// <script src='fullcalendar.js'></script>  -->
+
+
+</head>
+<body ng-controller="myCtrl">
+	<div class="container">
+		<h1>&#45; Meditate &#45;</h1>
+		<div class="timer bodyDiv">
+			<h3>Timer</h3> 
+			 <img src='https://insighttimer.com/images/bell_icon_big.png' width='100'><br>
+			<div id="timer"> 
+			<p>{{min}} : {{sec}}</p>
+			<span ng-hide="durationDisappear">Timer Duration: <input ng-change="enterTime()" type="text" name="timer" ng-model="min" style="width: 20px;"> minutes.</span><br>  <br>
+    		<button class="button" ng-click="countdown()">Start</button> 
+   			<button class="button" ng-click="pause()">Pause</button>
+   			<button class="button" ng-click="stop()">Cancel</button>
+			</div>
+		</div>
+		<div class="log bodyDiv">
+			<div class="todayLog">
+				<h3>Today, I meditated for <input type="text" name="today" ng-model="length"> minutes. <button class="addMoreButton2 button" ng-click="formClick()">+</button>
+				<button class="button" ng-click="submitForm()" >Enter</button></h3>
+				<div ng-show="showForm">
+					<form class="addForm">
+						When:  <input type="text" ng-model="when" name="when" placeholder="After I woke up" style="width: 100px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+						Where:  <input type="text" name="where" ng-model="where" placeholder="At home" style="width: 100px;"><br>
+						Meditation type: <br>
+						 <input type="text" name="type" ng-model="type" style="width: 320px;" placeholder="breathing, lovingkindness, walking"><br>
+						Comments: <br>
+						<textarea name="comments" ng-model="comments" rows="3" cols="50" placeholder="Sat in the back yard after work. Lots of distractions which made it hard to concentrate but helped de-stress after work"></textarea><br>
+						<button class="addMoreButton button" ng-click="formClick()">Add note</button>
+					</form>
+				</div>
+				<div class="logEntries" ng-repeat="entry in log | limitTo: -5 | orderBy:'-date' ">
+					<p>On {{entry.date | date: 'MM/dd'}}, I meditated for {{entry.length}} minutes.</p>
+
+				</div>
+			</div>
+		</div>
+		<div class="plan bodyDiv">
+			<h3>This week, I want to meditate:</h3>
+			<div>
+					<p>Sunday, I want to meditate for 
+					<span class="boldEntry" ng-click="click1()" ng-hide="sunMinPlanInput" > {{sunMinPlan}}</span>
+					<input type="text" name="sunMinPlan" ng-show="sunMinPlanInput" ng-blur="blur1()" ng-model="sunMinPlan">
+					minutes at 
+					<span class="boldEntry" ng-click="click2()" ng-hide="sunWhenPlanInput">{{sunWhenPlan}}</span>
+					<input type="text" name="sunWhenPlan" ng-show="sunWhenPlanInput" ng-blur="blur2()" ng-model="sunWhenPlan"> 
+					at 
+					<span class="boldEntry" ng-click="click3()" ng-hide="sunWherePlanInput">{{sunWherePlan}}</span>
+					<input type="text" name="sunWherePlan" ng-show="sunWherePlanInput" ng-blur="blur3()" ng-model="sunWherePlan">.</p>
+			</div>
+			<div> 
+				<p>Monday, I want to meditate for 
+					<span class="boldEntry" ng-click="click4()" ng-hide="monMinPlanInput" > {{monMinPlan}}</span>
+					<input type="text" name="monMinPlan" ng-show="monMinPlanInput" ng-blur="blur4()" ng-model="monMinPlan">
+					minutes at 
+					<span class="boldEntry" ng-click="click5()" ng-hide="monWhenPlanInput">{{monWhenPlan}}</span>
+					<input type="text" name="monWhenPlan" ng-show="monWhenPlanInput" ng-blur="blur5()" ng-model="monWhenPlan"> 
+					at 
+					<span class="boldEntry" ng-click="click6()" ng-hide="monWherePlanInput">{{monWherePlan}}</span>
+					<input type="text" name="monWherePlan" ng-show="monWherePlanInput" ng-blur="blur6()" ng-model="monWherePlan">.</p>
+
+			</div>
+			<div>
+				<p>Tuesday, I want to meditate for 
+					<span class="boldEntry" ng-click="click7()" ng-hide="tueMinPlanInput" > {{tueMinPlan}}</span>
+					<input type="text" name="tueMinPlan" ng-show="tueMinPlanInput" ng-blur="blur7()" ng-model="tueMinPlan">
+					minutes at 
+					<span class="boldEntry" ng-click="click8()" ng-hide="tueWhenPlanInput">{{tueWhenPlan}}</span>
+					<input type="text" name="tueWhenPlan" ng-show="tueWhenPlanInput" ng-blur="blur8()" ng-model="tueWhenPlan"> 
+					at 
+					<span class="boldEntry" ng-click="click9()" ng-hide="tueWherePlanInput">{{tueWherePlan}}</span>
+					<input type="text" name="tueWherePlan" ng-show="tueWhereInputPlan" ng-blur="blur9()" ng-model="tueWherePlan">.</p>
+			</div>
+			<div>
+				<p>Wednesday, I want to meditate for 
+					<span class="boldEntry" ng-click="click10()" ng-hide="wedMinPlanInput" > {{wedMinPlan}}</span>
+					<input type="text" name="wedMinPlan" ng-show="wedMinPlanInput" ng-blur="blur10()" ng-model="wedMinPlan">
+					minutes at 
+					<span class="boldEntry" ng-click="click11()" ng-hide="wedWhenPlanInput">{{wedWhenPlan}}</span>
+					<input type="text" name="wedWhenPlan" ng-show="wedWhenPlanInput" ng-blur="blur11()" ng-model="wedWhenPlan"> 
+					at 
+					<span class="boldEntry" ng-click="click12()" ng-hide="wedWherePlanInput">{{wedWherePlan}}</span>
+					<input type="text" name="wedWherePlan" ng-show="wedWherePlanInput" ng-blur="blur12()" ng-model="wedWherePlan">.</p>
+			</div>
+			<div>
+				<p>Thursday, I want to meditate for 
+					<span class="boldEntry" ng-click="click13()" ng-hide="thrMinPlanInput" > {{thrMinPlan}}</span>
+					<input type="text" name="thrMinPlan" ng-show="thrMinPlanInput" ng-blur="blur13()" ng-model="thrMinPlan">
+					minutes at 
+					<span class="boldEntry" ng-click="click14()" ng-hide="thrWhenPlanInput">{{thrWhenPlan}}</span>
+					<input type="text" name="thrWhenPlan" ng-show="thrWhenPlanInput" ng-blur="blur14()" ng-model="thrWhenPlan"> 
+					at 
+					<span class="boldEntry" ng-click="click15()" ng-hide="thrWherePlanInput">{{thrWherePlan}}</span>
+					<input type="text" name="thrWherePlan" ng-show="thrWherePlanInput" ng-blur="blur15()" ng-model="thrWherePlan">.</p>
+			</div>
+			<div>
+				<p>Friday, I want to meditate for 
+					<span class="boldEntry" ng-click="click16()" ng-hide="friMinPlanInput" > {{friMinPlan}}</span>
+					<input type="text" name="friMinPlan" ng-show="friMinPlanInput" ng-blur="blur16()" ng-model="friMinPlan">
+					minutes at 
+					<span class="boldEntry" ng-click="click17()" ng-hide="friWhenPlanInput">{{friWhenPlan}}</span>
+					<input type="text" name="friWhenPlan" ng-show="friWhenPlanInput" ng-blur="blur17()" ng-model="friWhenPlan"> 
+					at 
+					<span class="boldEntry" ng-click="click18()" ng-hide="friWherePlanInput">{{friWherePlan}}</span>
+					<input type="text" name="friWherePlan" ng-show="friWherePlanInput" ng-blur="blur18()" ng-model="friWherePlan">.</p>
+			</div>
+			<div>
+				<p>Saturday, I want to meditate for 
+					<span class="boldEntry" ng-click="click19()" ng-hide="satMinPlanInput" > {{satMinPlan}}</span>
+					<input type="text" name="satMinPlan" ng-show="satMinPlanInput" ng-blur="blur19()" ng-model="satMinPlan">
+					minutes at 
+					<span class="boldEntry" ng-click="click20()" ng-hide="satWhenPlanInput">{{satWhenPlan}}</span>
+					<input type="text" name="satWhenPlan" ng-show="satWhenPlanInput" ng-blur="blur20()" ng-model="satWhenPlan"> 
+					at 
+					<span class="boldEntry" ng-click="click21()" ng-hide="satWherePlanInput">{{satWherePlan}}</span>
+					<input type="text" name="satWherePlan" ng-show="satWherePlanInput" ng-blur="blur21()" ng-model="satWherePlan">.</p>
+			</div>
+
+		</div>
+		<div class="archive bodyDiv">
+			<h3>So far, I've meditated...</h3>
+			<div id="calendar"></div> 
+   			<div class="calendarOutput">
+   				<p id="calendarOutput"></p>
+   				<p id="calendarOutputNotes"></p>
+   				<p id="calendarOutputWhen"></p>
+   				<p id="calendarOutputWhere"></p>
+
+   			</div>
+		</div>
+
+
+	</div>
+<script src="../js/meditation.js"></script>
+</body>
+</html>
