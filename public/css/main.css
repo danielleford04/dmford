@@ -224,6 +224,12 @@ body h2 {
 	}
 
 	/*----contact----*/
+	
+	.contact {
+		height: auto;
+		margin-top: 100px;
+		margin-bottom: 70px;
+	}
 	.contact p {
 		font-size: 24px;
 
