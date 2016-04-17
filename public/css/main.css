@@ -126,10 +126,10 @@ body h2 {
 	padding-top: 40px;
 	}
 
-.dharma {
+/*.dharma {
 	width: 75%;
 	margin: auto;
-}
+}*/
 
 .portPiece {
 	width: 33%;
@@ -143,6 +143,7 @@ body h2 {
 
 .portPiece iframe {
 	width: 100%;
+	vertical-align: middle;
 }
 
 .preview {
@@ -184,6 +185,39 @@ body h2 {
 }
 
 /* -----------Mobile Ready -------*/
+
+@media screen and (max-width: 800px) {
+
+/* ------- Portfolio -------*/
+
+.portfolio {
+	height: auto;
+}
+
+.portfolio p {
+	display: block;
+}
+
+.preview {
+	display: inline;
+}
+.portfolio img {
+	width: 90%;
+	height: 90%;
+}
+.portfolio iframe {
+	width: 90%;
+	height: 100%;
+}
+
+.portPiece {
+	width: 100%;
+	float: none;
+	/*display: inline-block;*/
+	height: 60%;
+	margin-bottom: 110px;
+}
+}
 
 @media screen and (max-width: 600px) {
 	/*------header------*/
@@ -238,12 +272,6 @@ body h2 {
 	display: inline;
 }
 
-/* ------- Portfolio -------*/
-
-.portfolio iframe {
-	width: 90%;
-	height: auto;
-}
 	/*-----skills-----*/
 	.skills img {
 		width: 20vw;
